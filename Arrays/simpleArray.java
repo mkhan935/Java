@@ -5,14 +5,16 @@ import java.util.Random;
  */
 public class simpleArray {
 
+  //this is just a simple Array of size 10.
+
     public static void main(String[] args){
-        int[] x= new int[10];
+        int[] simpleArray= new int[10];
         Random num=new Random();
-        for(int i=0;i<x.length;i++){
+        for(int i=0;i<simpleArray.length;i++){
+//created a random num gen, which using the for loop will fill the array
+            simpleArray[i] = num.nextInt();
 
-            x[i] = num.nextInt();
-
-            System.out.println(x[i]);
+            System.out.println(simpleArray[i]); //prints on new line each time to console.
         }
     }
 }
