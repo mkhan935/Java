@@ -22,12 +22,14 @@ public class linkedList {
         list1.addAll(list2);
         list2=null;
 
-
+        System.out.println("Original List");
         printMe(list1);
-        System.out.println();
+        System.out.println(); //Blank Line
         remove(list1,2,4);
+        System.out.println("List after removal");
         printMe(list1);
-        System.out.println();
+        System.out.println();//Blank Line
+        System.out.println("List in reverse");
         reverseList(list1);
 
 
