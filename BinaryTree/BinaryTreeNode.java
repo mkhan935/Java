@@ -1,5 +1,10 @@
 /**
  * Created by Mohammed M Khan on 2/2/2017.
+ * I should have named this class just Node, but whatever
+ * the purpose of this class is to create a Node in a Binary Tree
+ * a Node contains data and two pointers, one to the left child of that node and one to the right child of that node
+ *
+ * the constructor below takes the param data, which again, is the data inside the node.
  */
 public class BinaryTreeNode {
     public int dataInsideThisNode;
@@ -9,6 +14,8 @@ public class BinaryTreeNode {
         left=null;
         right=null;
     }
+
+    /** The code below is all just simple setters and getters*/
 
     public int getDataInsideThisNode(){
         return dataInsideThisNode;
