@@ -20,6 +20,20 @@ public class BinaryTree {
         System.out.println(node.dataInsideThisNode + " ");
     }
 
+    public void printPreOrder(BinaryTreeNode node){
+        if(node == null)
+            return;
+
+        System.out.println(node.dataInsideThisNode+ " ");
+
+        printPreOrder(node.left);
+
+        printPreOrder(node.right);
+    }
+
+
+    void printPreOrder(){printPreOrder(root);}
+
     void printPostorder(){printPostorder(root);}
 
     public static void main(String[] args) {
@@ -32,6 +46,9 @@ public class BinaryTree {
 
         System.out.println("Postorder Traversal of Binary tress is ");
         tree.printPostorder();
+
+        System.out.println("PreOrder Traversal is: ");
+        tree.printPreOrder();
     }
 
 }
