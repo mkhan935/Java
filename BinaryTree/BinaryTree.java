@@ -13,11 +13,10 @@ public class BinaryTree {
         root=null;
     }
 
-    /**Now this is my review of Post, Pre, and In Order. Havent added In order yet, Will do so soon
-     * working on a spring boot project so a little busy
+    /**Now this is my review of Post, Pre, and In Order.
      *
-     * anyway, the methods take a node as the parameter. We want it to be set that when the user calls the method they input
-     * the root as the param, thats what the wrappers are about, so the root is passed into the function, when the user calls the fuction
+     * the methods take a node as the parameter. We want it to be set that when the user calls the method they input
+     * the root as the param, thats what the wrappers are about, so the root is passed into the function, when the user calls the function
      * all he/she has to worry about is to have a tree that has root and children*/
 
     public void printPostorder(BinaryTreeNode node){
@@ -42,10 +41,23 @@ public class BinaryTree {
         printPreOrder(node.right);
     }
 
+    public void printInorder(BinaryTreeNode node){
+        if(node==null)
+            return;
+
+        printInorder(node.left);
+
+        System.out.println(node.dataInsideThisNode + " ");
+
+        printInorder(node.right);
+    }
+
 
     void printPreOrder(){printPreOrder(root);}
 
     void printPostorder(){printPostorder(root);}
+
+    void printInorder(){printInorder(root);}
 
     public static void main(String[] args) {
         BinaryTree tree = new BinaryTree();
@@ -60,6 +72,9 @@ public class BinaryTree {
 
         System.out.println("PreOrder Traversal is: ");
         tree.printPreOrder();
+
+        System.out.println("InOrder Traversal is: ");
+        tree.printInorder();
     }
 
 }
