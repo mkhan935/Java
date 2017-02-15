@@ -16,7 +16,7 @@
  */
 public class BinarySearch {
 
-    public int binarySearch(int arr[], int left, int right, int x)
+    public int binarySearchRecursive(int arr[], int left, int right, int x)
     {
         if(right>=left)
         {
@@ -26,13 +26,32 @@ public class BinarySearch {
                 return middle;
 
             if(arr[middle]>x)
-                return binarySearch(arr,left,middle-1,x);
+                return binarySearchRecursive(arr,left,middle-1,x);
 
 
-            return binarySearch(arr,middle+1,right,x);
+            return binarySearchRecursive(arr,middle+1,right,x);
         }
 
         return -1; //not in array
+    }
+
+    public  int binarySearchIterative(int arr[],int x)
+            /** reviewed this today
+             * I sort of like recursion more but this is def easier to write
+             * one while loop, the concept inside the loop is the same */
+    {
+        int left =0, right = arr.length -1;
+        while (left<=right)
+        {
+            int middle = left +(right-left)/2;
+            if (arr[middle]==x)
+                return middle;
+            if(arr[middle] < x)
+                left = middle + 1;
+            else
+                right = middle - 1;
+        }
+        return -1;
     }
 
     public static void main(String[] args) {
@@ -44,20 +63,23 @@ public class BinarySearch {
           * last position in the array.*/
         BinarySearch test = new BinarySearch();
 
-        int testArr[] = {2,3,4,10,40};
+        int testArr[] = {22,44,65,110,230};
 
         int n =testArr.length;
 
-        int x = 10;
-
-        int result = test.binarySearch(testArr,0,n-1,x);
-        if (result == -1)
+        int x = 44;//for Iterative test
+        int y = 110; //for recursion test
+        int iterativeResult =test.binarySearchIterative(testArr, x);
+        int result = test.binarySearchRecursive(testArr,0,n-1,y);
+        if (result == -1 || iterativeResult == -1)
         {
             System.out.println("Element is not in testArr");
         }
         else
         {
-            System.out.println("Element found at position: " + result);
+            System.out.println("Using Recursion: Element found at position: " + result);
+            System.out.println("Using Iterative: Element found at position: " + iterativeResult);
         }
+
     }
 }
