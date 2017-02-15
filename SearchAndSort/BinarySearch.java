@@ -35,10 +35,12 @@ public class BinarySearch {
         return -1; //not in array
     }
 
+    /** reviewed this today
+     * I sort of like recursion more but this is def easier to write
+     * also recursion is much more expensive
+     * one while loop, the concept inside the loop is the same */
+
     public  int binarySearchIterative(int arr[],int x)
-            /** reviewed this today
-             * I sort of like recursion more but this is def easier to write
-             * one while loop, the concept inside the loop is the same */
     {
         int left =0, right = arr.length -1;
         while (left<=right)
@@ -54,13 +56,15 @@ public class BinarySearch {
         return -1;
     }
 
+    /**
+     * the only thing that needs explaining here is why left is 0 initially and why right is n-1
+     * first, right is n-1 signifying the last position in the array
+     * second, left is 0, because initially the value could be anywhere from position 0 to the
+     * last position in the array.*/
+
     public static void main(String[] args) {
 
-         /**
-          * the only thing that needs explaining here is why left is 0 initially and why right is n-1
-          * first, right is n-1 signifying the last position in the array
-          * second, left is 0, because initially the value could be anywhere from position 0 to the
-          * last position in the array.*/
+
         BinarySearch test = new BinarySearch();
 
         int testArr[] = {22,44,65,110,230};
@@ -71,7 +75,11 @@ public class BinarySearch {
         int y = 110; //for recursion test
         int iterativeResult =test.binarySearchIterative(testArr, x);
         int result = test.binarySearchRecursive(testArr,0,n-1,y);
-        if (result == -1 || iterativeResult == -1)
+        if (result == -1 )
+        {
+            System.out.println("Element is not in testArr");
+        }
+        if ( iterativeResult == -1)
         {
             System.out.println("Element is not in testArr");
         }
