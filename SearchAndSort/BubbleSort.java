@@ -31,7 +31,7 @@ public class BubbleSort {
         BubbleSort bs = new BubbleSort();
         int testA[]={46,23,55,86,92,15,5};
         bs.bubbleSort(testA);
-        System.out.println("The Sorted array looks like: ");
+        System.out.println("The Sorted array looks like: "); //sout
         bs.printArray(testA);
     }
 }
