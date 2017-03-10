@@ -2,6 +2,7 @@ import java.util.Random;
 
 /**
  * Created by Mohammed Khan on 10/10/2016.
+ *this is for my own purpose
  */
 public class simpleArray {
 
